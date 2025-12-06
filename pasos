@@ -1,0 +1,119 @@
+PARTE 1: BACKEND SUPER SIMPLE (JSON Server)
+Paso 1: Crear carpeta del backend
+    mkdir backend
+    cd backend
+Paso 2: Crear package.json
+backend/package.json:
+{
+  "name": "simple-api",
+  "version": "1.0.0",
+  "description": "API REST simple para Flutter",
+  "main": "server.js",
+  "scripts": {
+    "start": "json-server --watch db.json --port 3000 --host 0.0.0.0"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}
+=================
+cd /backend
+npm install
+Paso 4: Crear base de datos JSON
+backend/db.json:
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Laptop HP",
+      "descripcion": "Laptop con 8GB RAM",
+      "precio": 899.99,
+      "stock": 15
+    },
+    {
+      "id": 2,
+      "nombre": "Mouse Inalámbrico",
+      "descripcion": "Mouse ergonómico",
+      "precio": 25.50,
+      "stock": 50
+    },
+    {
+      "id": 3,
+      "nombre": "Teclado Mecánico",
+      "descripcion": "Teclado RGB",
+      "precio": 79.99,
+      "stock": 20
+    }
+  ]
+}
+Paso 5: Ejecutar el servidor
+cd /backend/ npm start
+npm start
+¡Listo! Tu API REST estará en: http://localhost:3000
+APP FLUTTER
+1. Crear el proyecto
+2. abrir pubspec.yaml:
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.1.0
+  provider: ^6.1.1
+
+Paso 3: Configurar Android
+frontend/android/app/src/main/AndroidManifest.xml:
+=================================================
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:label="mi_app_productos"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <meta-data
+              android:name="io.flutter.embedding.android.SplashScreenDrawable"
+              android:resource="@drawable/launch_background"
+              />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+</manifest>
+=====================================
+EStructura del proyecto
+mi_app_productos/
+├── android/
+├── ios/
+├── lib/
+│   ├── models/
+│   ├── services/
+│   ├── providers/
+│   ├── screens/
+│   └── main.dart
+├── test/
+└── pubspec.yaml
+Crear los archivos
+    lib/models/producto.dart
+    lib/services/api_service.dart
+    lib/provider/producto_provider.dart
+    lib/screens/lista_productos_screen.dart
+    lib/screens/agregar_producto_screen.dart
+    lib/main.dart:
+

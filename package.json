@@ -1,0 +1,13 @@
+{
+  "name": "backend-api",
+  "version": "1.0.0",
+  "description": "API REST simple para la app de productos",
+  "main": "server.js",
+  "scripts": {
+    "start": "json-server --watch db.json --port 3000 --host 0.0.0.0",
+    "dev": "json-server --watch db.json --port 3000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  }
+}

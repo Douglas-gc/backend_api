@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencias de lock
+package-lock.json
+yarn.lock
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos HTML administrativos que no quieres subir (opcional)
+admin.html
+admin2.html
